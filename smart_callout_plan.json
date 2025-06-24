@@ -1,0 +1,97 @@
+{
+  "project": "CKEditor5 Smart Callout Plugin",
+  "tech": [
+    "TypeScript",
+    "CKEditor5"
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Bootstrap environment",
+      "description": "Generate TypeScript package with CKEditor package generator; run initial build.",
+      "estimate_hours": 1,
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "title": "Define model & converters",
+      "description": "Register 'callout' element, write upcast/downcast, make widget.",
+      "estimate_hours": 2,
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Create command",
+      "description": "Implement InsertCalloutCommand with execute/refresh logic.",
+      "estimate_hours": 1.5,
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Glue plugin",
+      "description": "SmartCallout.ts exposes plugin and requires editing+UI.",
+      "estimate_hours": 0.5,
+      "depends_on": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Toolbar button",
+      "description": "Add insertCallout button, icon, command binding.",
+      "estimate_hours": 1,
+      "depends_on": [
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Balloon form view",
+      "description": "ContextualBalloon form to switch calloutType.",
+      "estimate_hours": 2,
+      "depends_on": [
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Widget polish",
+      "description": "Accessibility label, drag handle, visual tweaks.",
+      "estimate_hours": 0.5,
+      "depends_on": [
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Type‑coverage tests",
+      "description": "Compile‑time tests for TypeScript typing completeness.",
+      "estimate_hours": 1,
+      "depends_on": [
+        6
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Manual QA",
+      "description": "Run demo build, inspect model ↔ view conversion.",
+      "estimate_hours": 1,
+      "depends_on": [
+        7
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Package & publish",
+      "description": "Add package entry points, publish to registry.",
+      "estimate_hours": 0.5,
+      "depends_on": [
+        9
+      ]
+    }
+  ]
+}

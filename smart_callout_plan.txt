@@ -1,0 +1,64 @@
+SMART‑CALLOUT PLUGIN ROADMAP
+============================
+0. CONTEXT
+   • Goal: CKEditor 5 “Smart Callout” plugin (block widget with type attribute, custom UI, command)
+   • Tech: TypeScript, CKEditor 5 Framework
+
+1. BOOTSTRAP ENVIRONMENT
+   • Run: `npx @ckeditor/ckeditor5-package-generator@latest`
+   • Choose TypeScript package; verify `npm run build`
+   • Output: clean TS build, demo editor
+   • Est: 1 h
+   • Depends: none
+
+2. DEFINE MODEL & CONVERTERS  (SmartCalloutEditing.ts)
+   • Register schema: element 'callout', attr 'calloutType'
+   • Write downcast + upcast converters
+   • Wrap view element with `toWidget`
+   • Est: 2 h
+   • Depends: 1
+
+3. CREATE COMMAND  (InsertCalloutCommand.ts)
+   • Execute: insert or update callout, place caret inside
+   • Refresh: disable when selection already in callout
+   • Est: 1.5 h
+   • Depends: 2
+
+4. GLUE PLUGIN  (SmartCallout.ts)
+   • `requires = [SmartCalloutEditing, SmartCalloutUI]`
+   • Expose `pluginName`
+   • Est: 0.5 h
+   • Depends: 3
+
+5. TOOLBAR BUTTON  (SmartCalloutUI.ts)
+   • `componentFactory.add('insertCallout', …)`
+   • Bind to command, load SVG icon
+   • Est: 1 h
+   • Depends: 4
+
+6. BALLOON FORM VIEW  (SmartCalloutFormView.ts)
+   • ContextualBalloon showing radio / dropdown for type
+   • On submit: execute command with new type
+   • Est: 2 h
+   • Depends: 5
+
+7. WIDGET POLISH
+   • Add `label` for a11y, enable drag handle
+   • Est: 0.5 h
+   • Depends: 6
+
+8. TYPE‑COVERAGE TESTS
+   • Jest or vitest; compile‐time checks for wrong `calloutType`
+   • Turn on `noImplicitAny`
+   • Est: 1 h
+   • Depends: 6
+
+9. MANUAL QA
+   • `npm run dev`; verify model‑view sync with CKEditor Inspector
+   • Est: 1 h
+   • Depends: 7
+
+10. PACKAGE & PUBLISH
+    • Add "main": "src/index.ts"; publish to private registry
+    • Est: 0.5 h
+    • Depends: 9
