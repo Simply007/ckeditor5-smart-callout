@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
+This file is licensed under the terms of the MIT License (see LICENSE.md).
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CKEditor 5 Framework – Smart Callout plugin</title>
+	</head>
+	<body>
+		<div id="editor">
+			<h2>Smart Callout plugin</h2>
+			<p>This is the development environment for the Smart Callout plugin. Below are some test callouts:</p>
+			
+			<div class="callout callout--info" data-callout-type="info">
+				<div class="callout__content">
+					This is an <strong>info callout</strong>. It provides helpful information to users.
+				</div>
+			</div>
+			
+			<div class="callout callout--warning" data-callout-type="warning">
+				<div class="callout__content">
+					This is a <strong>warning callout</strong>. It alerts users to potential issues.
+				</div>
+			</div>
+			
+			<div class="callout callout--error" data-callout-type="error">
+				<div class="callout__content">
+					This is an <strong>error callout</strong>. It indicates something went wrong.
+				</div>
+			</div>
+			
+			<div class="callout callout--success" data-callout-type="success">
+				<div class="callout__content">
+					This is a <strong>success callout</strong>. It confirms successful operations.
+				</div>
+			</div>
+			
+			<p>Try editing the callouts above or use the console to test model operations:</p>
+			<ul>
+				<li><code>window.editor.model</code> - Access the model</li>
+				<li><code>window.editor.model.document.getRoot()</code> - Get root element</li>
+			</ul>
+		</div>
+
+		<script type="module" src="./main.ts"></script>
+	</body>
+</html>
