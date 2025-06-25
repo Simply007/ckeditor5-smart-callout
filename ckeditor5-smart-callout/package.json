@@ -12,6 +12,8 @@
     "ckeditor5": "^44.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24.0.4",
+    "typescript": "^5.8.3",
     "vite": "^5.2.0"
   },
   "author": "Smart Callout Plugin",
