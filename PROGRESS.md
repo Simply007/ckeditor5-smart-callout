@@ -14,7 +14,7 @@
 | 1 | Bootstrap environment | Generate base CKEditor5 environment and verify build process | 1.0h | None | ☑ Completed | Used degit to clone JavaScript starter files, updated package.json, npm install & build successful |
 | 2 | Convert to TypeScript | Add TypeScript configuration, convert main.js to TypeScript, update dependencies | 2.0h | Task 1 | ☑ Completed | Added tsconfig.json, converted main.js to main.ts with proper typing, fixed top-level await issue |
 | 3 | Define model & converters | Register 'callout' element, write upcast/downcast, make widget | 2.0h | Task 2 | ☑ Completed | SmartCalloutEditing.ts with full schema, converters, and editable widget functionality |
-| 4 | Project structure cleanup | Move package files to root, merge gitignore files | 0.5h | Task 3 | ☐ Pending | Reorganize project structure for proper package setup |
+| 4 | Project structure cleanup | Move package files to root, merge gitignore files | 0.5h | Task 3 | ☑ Completed | Moved package.json, tsconfig.json to root, merged .gitignore files, created vite.config.ts |
 | 5 | Automated testing setup | Create test framework and verification scripts | 1.0h | Task 4 | ☐ Pending | Replace manual testing with automated test suite |
 | 6 | Create command | Implement InsertCalloutCommand with execute/refresh logic | 1.5h | Task 5 | ☐ Pending | InsertCalloutCommand.ts |
 | 7 | Complete glue plugin | Add UI integration to SmartCallout.ts | 0.3h | Task 6 | 🔄 Partial | SmartCallout.ts exists, needs UI integration |
@@ -53,14 +53,14 @@
 ```
 
 ## Progress Summary
-- **Tasks Completed:** 3/13 (23%)
+- **Tasks Completed:** 4/13 (31%)
 - **Tasks In Progress:** 0/13 (0%)
-- **Tasks Pending:** 10/13 (77%)
-- **Estimated Time Remaining:** 8.3 hours
+- **Tasks Pending:** 9/13 (69%)
+- **Estimated Time Remaining:** 7.8 hours
 - **Actual Time Spent:** 7 hours
 
 ## Current Status
-🟢 **Ready** - Task 3 completed, ready for Task 4 (Project structure cleanup)
+🟢 **Ready** - Task 4 completed, ready for Task 5 (Automated testing setup)
 
 ## Repository Status
 - **GitHub Repository:** https://github.com/Simply007/ckeditor5-smart-callout.git
@@ -70,12 +70,11 @@
 - **Working Tree:** Clean (no pending changes)
 
 ## Next Steps
-1. **Ready to Start:** Task 4 - Project structure cleanup
-   - Move package.json and package-lock.json to project root
-   - Move .gitignore to project root and merge contents
-   - Update import paths if needed
-   - Update build and dev scripts to work from root
-   - Verify TypeScript build still works
+1. **Ready to Start:** Task 5 - Automated testing setup
+   - Set up Jest or Vitest testing framework
+   - Create unit tests for schema and converters
+   - Add test scripts to package.json
+   - Verify all tests pass
 
 ## Detailed Task Information
 
@@ -100,11 +99,11 @@
 - **Success Criteria:** ✅ Editable callouts, no errors, widget functionality
 - **Extra:** Project restructure, styling, testing environment
 
-### Task 4: Project Structure Cleanup
-- **Move Files:** package.json, package-lock.json to root
-- **Merge:** .gitignore files to root
-- **Update:** Any affected import paths or build configs
-- **Verify:** Build and dev scripts work from root
+### Task 4: Project Structure Cleanup ✅ COMPLETED
+- **Move Files:** ✅ package.json, package-lock.json, tsconfig.json moved to root
+- **Merge:** ✅ .gitignore files merged into single root file
+- **Update:** ✅ Created vite.config.ts, updated tsconfig.json paths
+- **Verify:** ✅ Build and dev scripts work from root (npm run build/dev)
 
 ### Task 5: Automated Testing Setup
 - **Framework:** Jest or Vitest setup
